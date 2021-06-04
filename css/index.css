@@ -1,5 +1,4 @@
 titulo {
-    color:#00E3FF;
     text-align: center;
     font-family: 'Courier New', monospace;
   }
@@ -27,5 +26,21 @@ titulo {
     background-color: #111;
   }
 
+  .footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: cadetblue;
+    color: black;
+  }
 
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial;
+    font-size: 17px;
+  }
+  
   
