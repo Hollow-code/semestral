@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario_final</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#error").hide();
+            $("#formulario").submit(function() {
+                var mensaje = "";
+                if ($("#nombre").val().trim().length == 0) {
+                    mensaje = "El nombre esta en blanco"
+                }
+                if ($("#apellidos").val().trim().length == 0) {
+                    mensaje = "El apellido esta en blanco"
+                }
+                if ($("#email").val().trim().length == 0) {
+                    mensaje = "El email esta en blanco"
+                }
+                if ($("#edad").val().trim().length == 0) {
+                    mensaje = "La edad esta en blanco"
+                }
+                if ($("#rut").val().trim().length == 0) {
+                    mensaje = "El rut esta en blanco"
+                }
+                if ($("#rut2").val().trim().length == 0) {
+                    mensaje = "El rut esta incompleto"
+                }
+                if (mensaje != "") {
+                    $("#error").html(mensaje);
+                    $("#error").show();
+                    event.preventDefault();
+                }
+            });
+
+        });
+    </script>
+</head>
+<h1 class="text-center" style="color: rgb(0, 0, 0);">FORMULARIO</h1>
+<ul>
+    <li><a class="active" href="Index.html">Inicio</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li style="float:right"><a class="active" href="formulario.html">Registrarse</a></li>
+    <li><a class="active" href="tienda.html"> Tienda </a></li>
+</ul>
+
+<body style="background-color: rgb(250, 250, 250);">
+    <div class="containter">
+        <div class="row text-center" style="padding-top: 65px;">
+            <div class="col-12">
+                <form method="POST" action="procesar.php" id="formulario">
+                    <div calss="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" style="border-radius: 7px;" size="50" placeholder="Escriba sus Nombre" value="">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" name="apellidos" style="border-radius: 7px;" size="50" placeholder="Escriba sus Apellidos" value="">
+                    </div>
+                    <div calss="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" style="border-radius: 7px;" size="50" placeholder="Escriba su email" value="">
+                    </div><br>
+                    <select name="region" style="padding-top: 1px; margin-top: 5px; width: 300px;">
+                        <option>Region</option>
+                        <option>Arica y Parinacota</option>
+                        <option>Tarapacá</option>
+                        <option>Antofagasta</option>
+                        <option>Atacama</option>
+                        <option>Coquimbo</option>
+                        <option>Coquimbo</option>
+                        <option>Valparaíso</option>
+                        <option>Santiago</option>
+                        <option>O’Higgins</option>
+                        <option>Maule</option>
+                        <option>Ñuble</option>
+                        <option>Biobío</option>
+                        <option>Araucanía</option>
+                        <option>Los Ríos</option>
+                        <option>Los Lagos</option>
+                        <option>Aysén</option>
+                        <option>Magallanes</option>
+                    </select><br>
+                    <br>
+
+                    <div calss="form-group">
+                        <label for="edad">Ingresar edad</label>
+                        <input type="number" id="edad" name="edad" style="border-radius: 7px;" min="1" max="100">
+                    </div><br>
+                    <div calss="form-group">
+                        <label for="rut">Rut</label>
+                        <input type="text" style="border-radius: 7px;" maxlength="8" id="rut" name="rut" size="7" /> - <input type="text" style="border-radius: 7px;" maxlength="1" id="rut2" name="rut" size="1">
+                    </div><br>
+                    <div>
+                        <label for="start">Fecha de nacimiento:</label>
+                        <input type="date" style="border-radius: 7px;" id="start" name="trip-start" min="1900-01-01" max="2021-12-31">
+                    </div>
+                    <br>
+                    <input type="submit" class="btn btn-danger" id="enviar" value="Enviar">
+                    <input type="reset" class="btn btn-primary" id="limnpiar" value="Limpiar">
+                    <div id="error" class="alert alert-danger" role="alert">
+                </form>
+                </div>
+
+            </div>
+        </div>
+
+</body>
+
+</html>
